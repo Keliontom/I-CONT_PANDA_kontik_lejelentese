@@ -23,7 +23,7 @@ def receive_data():
 def email(to_email, booking, container, seal):
     my_email = "teszt@i-cont.eu"
     password = "Icont87412"
-    to_email = "kele.tomka@gmail.com"
+    to_email = "tomi@i-cont.eu"
 
     message = f"Sziasztok,\n" \
             f"\n" \
