@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
-import smtplib
+import os
 
 app = Flask(__name__)
 
@@ -12,8 +12,8 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 #app.config['MAIL_DEBAG'] = True
 app.config['MAIL_USERNAME'] = 'teszt@i-cont.eu'
-app.config['MAIL_PASSWORD'] = 'testmailpassword'
-app.config['MAIL_DEFAULT_SENDER'] = 'teszt@i-cont.eu'
+app.config['MAIL_PASSWORD'] = os.environ.get('PASS')
+app.config['MAIL_DEFAULT_SENDER'] = ('Tomi I-CONT','teszt@i-cont.eu')
 app.config['MAIL_SMAX_EMAILS'] = 2
 #app.config['MAIL_SUPRESS_SEND'] = False
 app.config['MAIL_ASCII_ATTACHMENTS'] = False
@@ -28,79 +28,56 @@ def home():
 def receive_data():
 
     booking = (request.form['booking'])
-    container = (request.form['container'])
+    container = (request.form['cont'])
     seal = (request.form['seal'])
     print(f"Booking: {booking}")
     print(f"Konténer: {container}")
     print(f"Zár: {seal}\n")
 
-    msg = Message("Hello", recipients=['sivokiw143@undewp.com'])
+    msg = Message(f"booking: {booking} / {container}", recipients=['kele.tomka@gmail.com'])
     #msg.body = "Kerlek jelentsetek le Bilken az alabbi kontenert:"
-    #msg.html = "<h1>Kerlek jelentsetek le Bilken az alabbi kontenert:</h1>"
-    msg.body = f"Sziasztok,\n" \
-              f"\n" \
-              f"Kerlek jelentsetek le Bilken az alabbi kontenert: \n" \
-              f"\n" \
-              f"kontener: {container} \n" \
-              f"zar: {seal} \n" \
-              f"\n" \
-              f"Koszonom elore is. \n" \
-              f"Tomi\n" \
-              f"\n" \
-              f"\n" \
-              f"Udvozlettel / Best regards:\n" \
-              f"Tamas Kele\n" \
-              f"I-CONT Freight Forwarding S.R.L.\n" \
-              f"300671-Timisoara-Calea Circumvalatiunii 22.\n" \
-              f"\n" \
-              f"Mobil: +36 70 779 09 21\n" \
-              f"E-mail: tomi@i-cont.eu\n" \
-              f"Web: http://www.i-cont.eu\n"
+    #<h5 style=”font-family: ’Calibri’; font-size:11; color:black;”>
+    msg.html = f"""
+        <div>
+            Sziasztok,<br>
+            <br>
+            Kérlek jelentsétek le Bilken az alábbi konténert:<br>
+            <br>
+            konténer: <b>{container}</b><br>
+            zár: <b>{seal}</b><br>
+            <br>
+            Köszönöm előre is,<br>
+            Tomi <br>
+            <br>
+        </div>
+        <div>
+            Üdvözlettel / Best regards:<br>
+            Tamás Kele</h4><br>
+            <img src='https://icontshipping.com/wp-content/uploads/2020/06/logo-2.png'; width='100'><br>
+        </div>
+        <div>
+            <b>I-CONT Freight Forwarding S.R.L.</b><br>
+            300671-Timisoara-Calea Circumvalatiunii 22.<br>
+            <br>
+            Mobil: <b>+36 70 779 0921</b><br>
+            E-mail: tomi@i-cont.eu<br>
+            Web: http://www.i-cont.eu </h5><br>
+        </div>"""
+
     mail.send(msg)
 
     #email(booking, container, seal)
 
-    return f"<h1>Booking number: {booking},</br>Container number: {container},</br>Seal number: {seal}</h1>"
+    return f"""
+                Booking: <b>{booking}</b>
+                </br>
+                Konténer: <b>{container}</b>
+                </br>
+                Zár: <b>{seal}</b>"""
 
 def email(booking, container, seal):
     msg = Message("Hello", recipients=['sivokiw143@undewp.com'])
     mail.send(msg)
-
-
-"""def email(to_email, booking, container, seal):
-    my_email = "teszt@i-cont.eu"
-    password = "testemailpassword"
-    to_email = "tomi@i-cont.eu"
-
-    message = f"Sziasztok,\n" \
-            f"\n" \
-            f"Kerlek jelentsetek le Bilken az alabbi kontenert: \n" \
-            f"\n" \
-            f"kontener: {container} \n" \
-            f"zar: {seal} \n" \
-            f"\n" \
-            f"Koszonom elore is. \n" \
-            f"Tomi\n" \
-            f"\n" \
-            f"\n" \
-            f"Udvozlettel / Best regards:\n" \
-            f"Tamas Kele\n" \
-            f"I-CONT Freight Forwarding S.R.L.\n" \
-            f"300671-Timisoara-Calea Circumvalatiunii 22.\n" \
-            f"\n" \
-            f"Mobil: +36 70 779 09 21\n" \
-            f"E-mail: tomi@i-cont.eu\n" \
-            f"Web: http://www.i-cont.eu\n"
-
-    print(message)
-    with smtplib.SMTP("mail.i-cont.eu") as connection:
-        connection.starttls()
-        connection.login(user=my_email, password=password)
-        connection.sendmail(
-            from_addr=my_email,
-            to_addrs=to_email,
-            msg=f"Subject:Booking: {booking}/ {container}\n\n{message}"
-        )"""
 
 if __name__ == "__main__":
     app.run()
