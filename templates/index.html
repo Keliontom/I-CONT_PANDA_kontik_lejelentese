@@ -23,16 +23,16 @@
         <form action="/email_sent" method="post" role="form">
           <div class="form-group">
             <label for="name">Booking</label>
-            <input type="text" class="form-control" id="booking" name="booking" placeholder="Booking">
+            <input type="text" maxlength="10" class="form-control" id="booking" name="booking" pattern="[0-9]{10}" title="10 számjegy" required placeholder="Booking">
             <br>
             <label for="cont">Konténer:</label>
-            <input type="text" class="form-control" id="cont" name="cont" placeholder="Konténer">
+            <input type="text" maxlength="11" class="form-control" id="cont" name="cont" pattern="[A-Z]{4}[0-9]{7}" title="4 NAGYBETŰ majd 7 számjegy" required placeholder="pl: TEMU1234567">
             <br>
             <label for="zar">Zár:</label>
-            <input type="text" class="form-control" id="zar" name="seal" placeholder="Zárszám">
+            <input type="text" maxlength="13" class="form-control" id="zar" name="seal" required placeholder="Zárszám">
             <br>
             <label for="rendszam">Rendszám:</label>
-            <input type="text" class="form-control" id="rendszam" name="rendszam" placeholder="Rendszám">
+            <input type="text" maxlength="19" class="form-control" id="rendszam" name="rendszam" pattern="[A-Z0-9\-]{1,19}/[A-Z0-9\-]{1,19}" title="Csak NAGYBETŰ, '-' és számokat tartalmazhat. '/' jellel legyen elválasztva a vontató és a pótkocsi rendszáma" required placeholder="pl: AAA-123/BBB-123 vagy AAAA-123/BBBB-123">
           </div>
           <br>
           <center>
