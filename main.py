@@ -24,12 +24,13 @@ mail = Mail(app)
 def home():
     return render_template("index.html")
 
-@app.route("/login", methods=["POST"])
+@app.route("/email_sent", methods=["POST"])
 def receive_data():
 
     booking = (request.form['booking'])
     container = (request.form['cont'])
     seal = (request.form['seal'])
+    truck_number = (request.form['rendszam'])
     print(f"Booking: {booking}")
     print(f"Konténer: {container}")
     print(f"Zár: {seal}\n")
@@ -38,6 +39,7 @@ def receive_data():
     #msg.body = "Kerlek jelentsetek le Bilken az alabbi kontenert:"
     #<h5 style=”font-family: ’Calibri’; font-size:11; color:black;”>
     msg.html = f"""
+    <div class="col-4 col-sm-3 col-md-5"> 
         <div>
             Sziasztok,<br>
             <br>
@@ -53,6 +55,7 @@ def receive_data():
         <div>
             Üdvözlettel / Best regards:<br>
             Tamás Kele</h4><br>
+            <br>
             <img src='https://icontshipping.com/wp-content/uploads/2020/06/logo-2.png'; width='100'><br>
         </div>
         <div>
@@ -62,18 +65,31 @@ def receive_data():
             Mobil: <b>+36 70 779 0921</b><br>
             E-mail: tomi@i-cont.eu<br>
             Web: http://www.i-cont.eu </h5><br>
-        </div>"""
+        </div>
+    </div>"""
 
     mail.send(msg)
 
     #email(booking, container, seal)
 
     return f"""
-                Booking: <b>{booking}</b>
-                </br>
-                Konténer: <b>{container}</b>
-                </br>
-                Zár: <b>{seal}</b>"""
+            Booking: <b>{booking}</b>
+            </br>
+            Konténer: <b>{container}</b>
+            </br>
+            Zár: <b>{seal}</b>
+            </br>
+            Rendszám: <b>{truck_number}</b>
+            </br>
+            </br>
+            </br>
+            <h3>Az alábbi e-mail lett elküldve a terminálra:</h3>       
+            {msg.html}"""
+
+
+def email(booking, container, seal):
+    msg = Message("Hello", recipients=['sivokiw143@undewp.com'])
+    mail.send(msg)
 
 if __name__ == "__main__":
     app.run()
