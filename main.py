@@ -75,9 +75,5 @@ def receive_data():
                 </br>
                 Zár: <b>{seal}</b>"""
 
-def email(booking, container, seal):
-    msg = Message("Hello", recipients=['sivokiw143@undewp.com'])
-    mail.send(msg)
-
 if __name__ == "__main__":
     app.run()
