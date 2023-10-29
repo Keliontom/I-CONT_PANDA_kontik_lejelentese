@@ -35,7 +35,7 @@ def receive_data():
     print(f"Konténer: {container}")
     print(f"Zár: {seal}\n")
 
-    msg = Message(f"booking: {booking} / {container}", recipients=['kele.tomka@gmail.com'])
+    msg = Message(f"booking: {booking} / {container}", recipients=['sorosinszki.szabina@gmail.com'])
     #msg.body = "Kerlek jelentsetek le Bilken az alabbi kontenert:"
     #<h5 style=”font-family: ’Calibri’; font-size:11; color:black;”>
     msg.html = f"""
