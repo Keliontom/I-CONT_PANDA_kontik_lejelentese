@@ -28,14 +28,14 @@ def home():
 def receive_data():
 
     booking = (request.form['booking'])
-    container = (request.form['cont'])
+    cont = (request.form['cont'])
     seal = (request.form['seal'])
     truck_number = (request.form['rendszam'])
     print(f"Booking: {booking}")
-    print(f"Konténer: {container}")
+    print(f"Konténer: {cont}")
     print(f"Zár: {seal}\n")
 
-    msg = Message(f"booking: {booking} / {container}", recipients=['kele.tomka@gmail.com'])
+    msg = Message(f"booking: {booking} / {cont}", recipients=['kele.tomka@gmail.com'])
     #msg.body = "Kerlek jelentsetek le Bilken az alabbi kontenert:"
     #<h5 style=”font-family: ’Calibri’; font-size:11; color:black;”>
     msg.html = f"""
@@ -45,7 +45,7 @@ def receive_data():
             <br>
             Kérlek jelentsétek le Bilken az alábbi konténert:<br>
             <br>
-            konténer: <b>{container}</b><br>
+            konténer: <b>{cont}</b><br>
             zár: <b>{seal}</b><br>
             <br>
             Köszönöm előre is,<br>
@@ -75,7 +75,7 @@ def receive_data():
     return f"""
             Booking: <b>{booking}</b>
             </br>
-            Konténer: <b>{container}</b>
+            Konténer: <b>{cont}</b>
             </br>
             Zár: <b>{seal}</b>
             </br>
@@ -87,7 +87,7 @@ def receive_data():
             {msg.html}"""
 
 
-def email(booking, container, seal):
+def email(booking, cont, seal):
     msg = Message("Hello", recipients=['sivokiw143@undewp.com'])
     mail.send(msg)
 
