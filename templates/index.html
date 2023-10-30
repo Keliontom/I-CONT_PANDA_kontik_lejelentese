@@ -22,8 +22,11 @@
       <div class="col-6 col-sm-6 col-md-6">
         <form action="/email_sent" method="post" role="form">
           <div class="form-group">
+            <label for="name">I-CONT Ref.</label>
+            <input type="text" maxlength="9" class="form-control" id="icont_ref" name="icont_ref" pattern="[0-9\-]{1,9}" title="Csak számok és '-' lehet benne" required placeholder="pl: 898123-1">
+            <br>
             <label for="name">Booking</label>
-            <input type="text" maxlength="10" class="form-control" id="booking" name="booking" pattern="[0-9]{10}" title="10 számjegy" required placeholder="Booking">
+            <input type="text" maxlength="10" class="form-control" id="booking" name="booking" pattern="[0-9]{10}" title="10 számjegy" required placeholder="pl: 6368293800">
             <br>
             <label for="cont">Konténer:</label>
             <input type="text" maxlength="11" class="form-control" id="cont" name="cont" pattern="[A-Z]{4}[0-9]{7}" title="4 NAGYBETŰ majd 7 számjegy" required placeholder="pl: TEMU1234567">
