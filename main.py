@@ -81,8 +81,8 @@ def receive_data():
             Web: http://www.i-cont.eu </h5><br>
         </div>
     </div>"""
-
-    #### mail.send(msg)
+    
+    mail.send(msg)
 
     return f"""
                 Booking: <b>{booking}</b>
