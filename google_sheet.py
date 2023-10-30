@@ -9,7 +9,7 @@ class Icont_sheet():
     def __init__(self):
         # self.google_account = gspread.service_account(filename="google_credentials.json") # - egy meghatározott email cimmel lehet módosítani a táblázatokat.
         #self.google_account = gspread.oauth(credentials_filename="OAUTH_client_secret_google_credentials.json") # - nem kell külön e-mail címet megadni, hogy a python program hozzáférjen a táblázathoz-
-        self.google_account = gspread.service_account(filename="./secrets/pandalejelentes-new.json") # - egy meghatározott email cimmel lehet módosítani a táblázatokat.
+        self.google_account = gspread.service_account(filename="pandalejelentes-new.json") # - egy meghatározott email cimmel lehet módosítani a táblázatokat.
 
     """FONTOS A LENTI SZÖVEG!!!"""
     # He megjelenik az alábbi hibaüzenet:
