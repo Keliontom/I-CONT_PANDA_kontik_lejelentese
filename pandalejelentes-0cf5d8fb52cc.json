@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "pandalejelentes",
+  "private_key_id": "0cf5d8fb52ccb3f45df5a7b15c43886a95a125f5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDeeWCrg82qyhgA\nuRCxLpnfFhCucuX9FLY3xndBucpVxPEJ14ZxjA90WsscHJKqzl8DN4C5rerdgEkp\nXHTACq0uMdBPfSixgjIyX/28n70W07pEqWrnkP8mGiPVGVMObGfKBD2xQA3rCQuC\nTQFdfei4WmK0Tra/4eWG4AnzzMXIMY4xJov04jpsvWhE9HZfMcQ1UwTVkJ8YwbZu\nTbosQAAbvrp3ppLuUSG4QnOqaY8Uzh4EFsaunPHfk6cmHAqBjSVJ/+Svd9u/MhrU\nwr+fSGvCvlFFSaFdiCSL5eGiRFrKBiffODxmIjN4AJ3qdSEWJVRBXL0MdhPXAKgj\nN100Nmf1AgMBAAECggEANj6bIwbOoWuIQbjeCI2nx/y90YNDb5tauKvEDTsLSjFs\nYi1yYwI3DHRM3MxcuJf8E7E3Sk7NGvf6HsMj1mVkB4Tu2UrXnrxzl9PO7ux18vhq\nDO7QGalBhR1PiliT50roXZn+HtdS7XF1pG45PH4EPdsQAQ3GQnAGgoXi91aBDQgP\nzAu+AjHEqyS8nRieIOhFLFSs58qgNCCU+C16BXgkaio7Et9Ipz4KMA9qzvrkB0Pa\ndJOpar3XYmt8rAHnOvCPXLnGNMYLOozZRDj4N78fu719hzZfnTh2oll5A7W0S4AN\netjt3MvwZs2tqTVkXWOxdQKrlp2f00jVvS99gblW2wKBgQD08UZXFI03rlLsZdqY\no3Mu7uQQyvyp3elZRSPuZuMEdWBktbOXLvnj0+/dZfRukrmsA1CE7xTZ0N+7GIG2\nzzUBNFp1dYOdvvkBHRLxLn91mEBX+ip1a/niwqObtVcd37YcFxMyXTS4bcUW/HXu\nDOWqFvav2M2y0HhwubzjePq+qwKBgQDohHFqbQkyHjAsTNqdDuBovpTvJcfCqDJb\nkAYfgtfnAKRPDzPRa7fzZyDmw6Ie2PYI6uFpZoiQhxEtFJ5eSer45Yrbhj1kUgnk\nElfWshhgKwBL5mkJfWvxfomVKwjnw04dqY4RAAwmFEi8j2ksiQkV0f7OQrSiuibT\nyb35lGrz3wKBgQDUBOT2C3wRbnuo1KFa7mCNh4syXgJGpyeNdiOcAMMQ4OkHQ6Co\nhKkZZCKEafQioi7FjjjsWGacBAklUhk1vDYNTNvgQFAlA2FWbWwwCCecCqXngUuv\nSD+M4R3tchJucW6Y8gBT4An6eknXk8Agxlkl2aq+m9OxrHIUYTH3VIj28QKBgQCe\nQp9rn+F1cmS5kmnuItUNlkKK7/0iehckiUgRpJ5NhftQMHnFnfrruhMD3r53HpeA\nBFb+xaJINRa0x2bvqII9fQdhWeJpaQmAahfNcxTyR/KAtshhhDO3gLgmhs8d6Ko/\nuEuROKYMORw086vTe0Zqyq8TNwX6CJgq6RLcUG/nowKBgQDrC8rNB5pUgqOOSoPS\ni93uW60Hk53DB9BIwFccvtL0PFWGE+6WzOpQiSVWOY4HopgJQC3WUuk+6Xe5dyPu\ntJh986bl0WrPQ/m/SEwFwC5QJbZUiQpFHdK0+aXJzZbmuIKyZL2G1f8C74nOI4Jn\nA+PPCS1+9s+tgbiIGLxJfLGFCQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "soforok-service-account@pandalejelentes.iam.gserviceaccount.com",
+  "client_id": "111903318337866262190",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/soforok-service-account%40pandalejelentes.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
