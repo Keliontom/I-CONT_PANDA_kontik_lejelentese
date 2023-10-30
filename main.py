@@ -48,8 +48,8 @@ def receive_data():
         return redirect(url_for('not_good'))
 
 
-    msg = Message(f"booking: {booking} / {cont}", recipients=['export@coscoshipping.hu', 'export.rco.hu@railcargo.com', 'Zsofia.Ordog@railcargo.com','Liza.Simon@railcargo.com','fanni.vamos@i-cont.eu'])
-    #msg = Message(f"booking: {booking} / {cont}", recipients=['tomi@i-cont.eu','fanni.vamos@i-cont.eu'])
+    #msg = Message(f"booking: {booking} / {cont}", recipients=['export@coscoshipping.hu', 'export.rco.hu@railcargo.com', 'Zsofia.Ordog@railcargo.com','Liza.Simon@railcargo.com','fanni.vamos@i-cont.eu'])
+    msg = Message(subject=f"booking: {booking} / {cont}", recipients=['fanni.vamos@i-cont.eu'], cc=['tomi@i-cont.eu'])
     #msg.body = "Kerlek jelentsetek le Bilken az alabbi kontenert:"
     #<h5 style=”font-family: ’Calibri’; font-size:11; color:black;”>
     msg.html = f"""
