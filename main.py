@@ -110,7 +110,10 @@ def googlesheet_kitoltes(icont_ref, booking, cont,seal, truck_number):
 
     first_row = googletabla.get_container_rows("ICONT Ref.")[0]
     print(first_row)
-    row = googletabla.get_container_rows(icont_ref)[0]
+     try:
+        row = googletabla.get_container_rows(icont_ref)[0]
+    except:
+        return False
     print(row)
     row_dict = googletabla.bild_dictionary(first_row, row)
     print(row_dict)
