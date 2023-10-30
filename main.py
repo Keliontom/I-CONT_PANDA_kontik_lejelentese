@@ -29,7 +29,7 @@ def home():
 
 @app.route('/not_good')
 def not_good():
-    return render_template("not_good.html"), {"Refresh": "5; url='https://panda-lejelentes.onrender.com'"}
+    return render_template("not_good.html"), {"Refresh": "8; url='https://panda-lejelentes.onrender.com'"}
 
 
 @app.route("/email_sent", methods=["POST"])
