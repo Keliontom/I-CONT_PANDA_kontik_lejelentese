@@ -16,7 +16,7 @@ app.config['MAIL_USE_SSL'] = True
 #app.config['MAIL_DEBAG'] = True
 app.config['MAIL_USERNAME'] = 'teszt@i-cont.eu'
 app.config['MAIL_PASSWORD'] = os.environ.get('PASS')
-app.config['MAIL_DEFAULT_SENDER'] = ('Tomi I-CONT','teszt@i-cont.eu')
+app.config['MAIL_DEFAULT_SENDER'] = ('Tomi I-CONT','tomi@i-cont.eu')
 app.config['MAIL_SMAX_EMAILS'] = 2
 #app.config['MAIL_SUPRESS_SEND'] = False
 app.config['MAIL_ASCII_ATTACHMENTS'] = False
@@ -48,7 +48,8 @@ def receive_data():
         return redirect(url_for('not_good'))
 
 
-    msg = Message(f"booking: {booking} / {cont}", recipients=['kele.tomka@gmail.com'])
+    #msg = Message(f"booking: {booking} / {cont}", recipients=['export@coscoshipping.hu', 'export.rco.hu@railcargo.com', 'Zsofia.Ordog@railcargo.com','Liza.Simon@railcargo.com','fanni.vamos@i-cont.eu'])
+    msg = Message(f"booking: {booking} / {cont}", recipients=['tomi@i-cont.eu','fanni.vamos@i-cont.eu'])
     #msg.body = "Kerlek jelentsetek le Bilken az alabbi kontenert:"
     #<h5 style=”font-family: ’Calibri’; font-size:11; color:black;”>
     msg.html = f"""
