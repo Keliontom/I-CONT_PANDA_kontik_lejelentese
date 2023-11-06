@@ -49,7 +49,8 @@ def receive_data():
 
 
     #msg = Message(f"booking: {booking} / {cont}", recipients=['export@coscoshipping.hu', 'export.rco.hu@railcargo.com', 'Zsofia.Ordog@railcargo.com','Liza.Simon@railcargo.com','fanni.vamos@i-cont.eu'])
-    msg = Message(subject=f"booking: {booking} / {cont}", recipients=['export@coscoshipping.hu', 'export.rco.hu@railcargo.com'], cc=['Zsofia.Ordog@railcargo.com','Liza.Simon@railcargo.com','fanni.vamos@i-cont.eu','tomi@i-cont.eu'])
+    #msg = Message(subject=f"booking: {booking} / {cont}", recipients=['export@coscoshipping.hu', 'export.rco.hu@railcargo.com'], cc=['Zsofia.Ordog@railcargo.com','Liza.Simon@railcargo.com','fanni.vamos@i-cont.eu','tomi@i-cont.eu'])
+    msg = Message(subject=f"booking: {booking} / {cont}", recipients=['kele.tomka@i-cont.eu'])
     #msg.body = "Kerlek jelentsetek le Bilken az alabbi kontenert:"
     #<h5 style=”font-family: ’Calibri’; font-size:11; color:black;”>
     msg.html = f"""
